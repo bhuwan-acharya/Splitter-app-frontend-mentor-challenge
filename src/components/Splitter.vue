@@ -183,7 +183,7 @@ main {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  max-height: 100vh;
+  max-height: 100%;
 }
 /* main-component for calculator and display */
 .main-component {
@@ -327,9 +327,6 @@ button {
   align-items: baseline;
 }
 @media screen and (max-width: 375px) {
-  main {
-    max-height: 100%;
-  }
   .main-component {
     width: 100vw;
     display: flex;
