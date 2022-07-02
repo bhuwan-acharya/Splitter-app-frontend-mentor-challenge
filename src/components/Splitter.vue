@@ -184,7 +184,7 @@ main {
   justify-content: center;
   align-items: center;
   max-height: 100vh;
-  margin: 4rem;
+  /* margin: 4rem; */
 }
 /* main-component for calculator and display */
 .main-component {
@@ -328,59 +328,34 @@ button {
   align-items: baseline;
 }
 @media screen and (max-width: 375px) {
+  main {
+    max-height: 100%;
+  }
   .main-component {
-    background-color: #fff;
     width: 100vw;
-    border-radius: 1.5rem;
     display: flex;
     flex-direction: column;
     padding: 0rem;
   }
-  .title-section {
-    letter-spacing: 0.75rem;
-    margin-bottom: 2rem;
-    margin-top: 8rem;
-  }
   .total-display-component {
-    background-color: hsl(183, 100%, 15%);
-    border-radius: 1rem;
-    color: #fff;
     width: 83%;
-    height: 100%;
-    position: relative;
     margin: 2rem;
   }
   .input-fields-section {
     padding: 2rem;
   }
   .select-tips {
-    display: grid;
     grid-template-columns: 48% 48%;
-    gap: 1.25rem;
-  }
-  .label-amount {
-    margin: 2rem;
-    line-height: 1rem;
   }
   .reset-btn {
     width: 80%;
-    height: 3rem;
-    font-size: 1.25vmax;
-    font-weight: 700;
-    background-color: hsl(172, 67%, 45%);
   }
   .button-section {
     position: static;
     margin-bottom: 2rem;
   }
-  .amount {
-    font-size: 3.5vmax;
-  }
   .number-of-people-andno-zero-component {
-    display: flex;
     flex-direction: column;
-    justify-content: space-between;
-    align-items: baseline;
   }
 }
 </style>
