@@ -224,8 +224,8 @@ main {
 }
 .input-field {
   width: 100%;
-  height: 3rem;
-  padding: 0.5rem;
+  height: 3.5rem;
+  /* padding: 0.5rem; */
   border: none;
   background-color: hsl(189, 41%, 97%);
   color: hsl(183, 100%, 15%);
@@ -258,8 +258,8 @@ input:focus {
 /* for the tips button */
 .select-tips {
   display: grid;
-  grid-template-columns: 32% 32% 32%;
-  gap: 1.25rem;
+  grid-template-columns: 30% 30% 30%;
+  gap: 1rem;
 }
 .tip-button {
   width: 100%;
