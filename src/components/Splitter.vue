@@ -184,7 +184,6 @@ main {
   justify-content: center;
   align-items: center;
   max-height: 100vh;
-  /* margin: 4rem; */
 }
 /* main-component for calculator and display */
 .main-component {
