@@ -347,7 +347,7 @@ button {
   justify-content: space-between;
   align-items: baseline;
 }
-@media screen and (max-width: 375px) {
+@media screen and (max-width: 575px) {
   .main-component {
     width: 100vw;
     display: flex;
