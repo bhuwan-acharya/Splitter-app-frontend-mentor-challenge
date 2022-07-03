@@ -115,7 +115,19 @@
           </div>
         </div>
         <div class="button-section">
-          <button class="reset-btn" @click="onReset">RESET</button>
+          <button
+            :class="
+              bill == null && numberOfPeople == null && tipSelected == null
+                ? 'disabled-reset-btn'
+                : 'reset-btn'
+            "
+            @click="onReset"
+            :disabled="
+              bill == null && numberOfPeople == null && tipSelected == null
+            "
+          >
+            RESET
+          </button>
         </div>
       </article>
     </section>
@@ -310,6 +322,16 @@ button {
   font-size: 1.25vmax;
   font-weight: 700;
   background-color: hsl(172, 67%, 45%);
+}
+.disabled-reset-btn {
+  width: 90%;
+  padding: 1rem;
+  font-size: 1.25vmax;
+  font-weight: 700;
+  background-color: hsl(172, 67%, 45%);
+}
+.reset-btn:hover {
+  background-color: hsl(185, 41%, 84%);
 }
 .button-section {
   display: flex;
