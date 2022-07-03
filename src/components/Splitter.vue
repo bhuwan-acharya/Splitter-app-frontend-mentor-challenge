@@ -117,13 +117,17 @@
         <div class="button-section">
           <button
             :class="
-              bill == null && numberOfPeople == null && tipSelected == null
+              (bill == null || bill == '') &&
+              (numberOfPeople == null || numberOfPeople == '') &&
+              (tipSelected == null || tipSelected == '')
                 ? 'disabled-reset-btn'
                 : 'reset-btn'
             "
             @click="onReset"
             :disabled="
-              bill == null && numberOfPeople == null && tipSelected == null
+              (bill == null || bill == '') &&
+              (numberOfPeople == null || numberOfPeople == '') &&
+              (tipSelected == null || tipSelected == '')
             "
           >
             RESET
@@ -208,13 +212,10 @@ main {
   background-color: hsl(183, 100%, 15%);
   border-radius: 1rem;
   color: #fff;
-  /* width: 100%; */
-  /* height: 100%; */
   position: relative;
 }
 /* all the buttons section */
 .input-fields-section {
-  /* width: 100%; */
   padding: 1rem;
 }
 .input-icon-field i {
@@ -329,6 +330,7 @@ button {
   font-size: 1.25vmax;
   font-weight: 700;
   background-color: hsl(172, 67%, 45%);
+  filter: brightness(60%);
 }
 .reset-btn:hover {
   background-color: hsl(185, 41%, 84%);
@@ -336,7 +338,6 @@ button {
 .button-section {
   display: flex;
   width: 100%;
-  /* height: 100%; */
   justify-content: center;
   position: absolute;
   top: 80%;
