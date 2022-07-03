@@ -18,7 +18,6 @@
               v-model.number="bill"
               min="0"
               step=".01"
-              required
             />
           </div>
         </div>
@@ -306,6 +305,7 @@ button {
   align-items: center;
   line-height: 1rem;
   font-size: 1.25vmax;
+  overflow: hidden;
 }
 .person {
   color: hsl(184, 14%, 56%);
