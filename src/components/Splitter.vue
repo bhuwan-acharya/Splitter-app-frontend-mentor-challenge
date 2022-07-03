@@ -26,7 +26,11 @@
           <p class="input-label">select Tip %</p>
           <div class="select-tips">
             <button
-              class="tip-button"
+              :class="
+                tipSelected == tip
+                  ? 'tip-button tip-button-active'
+                  : 'tip-button'
+              "
               v-for="(tip, index) in tipArray"
               :key="index"
               :value="tip"
@@ -41,7 +45,8 @@
               oninput="this.value == 0  ? null : this.value = Math.abs(this.value)"
               min="0"
               placeholder="Custom"
-              v-model.number="tipSelected"
+              :value="customTip"
+              @input="(e) => handleCustomTip(e)"
               step=".01"
             />
           </div>
@@ -125,31 +130,22 @@ export default {
       tipArray: [5, 10, 15, 20, 25],
       bill: null,
       numberOfPeople: null,
+      customTip: null,
       tipSelected: null,
     };
   },
   methods: {
     onReset: function () {
-      console.log(Math.abs(123 - 412));
-      console.log("this is reset buttom");
       this.bill = null;
       this.numberOfPeople = null;
       this.tipSelected = null;
     },
     selectTipHandle: function (e) {
-      console.log(this.customTip);
-      if (this.customTip) {
-        console.log(this.customTip);
-        this.tipSelected = this.customTip;
-      }
       this.tipSelected = e.target.value;
     },
-  },
-  computed: {
-    handleSelectTipComputedMethod: function () {
-      console.log("test");
-      console.log(this.customTip);
-      return true;
+    handleCustomTip: function (e) {
+      this.customTip = e.target.value;
+      this.tipSelected = e.target.value;
     },
   },
 };
@@ -200,17 +196,15 @@ main {
   background-color: hsl(183, 100%, 15%);
   border-radius: 1rem;
   color: #fff;
-  width: 100%;
-  height: 100%;
+  /* width: 100%; */
+  /* height: 100%; */
   position: relative;
 }
 /* all the buttons section */
 .input-fields-section {
+  /* width: 100%; */
   padding: 1rem;
 }
-/* .input-icon-field {
-  background-color: red;
-} */
 .input-icon-field i {
   position: absolute;
 }
@@ -223,8 +217,7 @@ main {
 }
 .input-field {
   width: 100%;
-  height: 3.5rem;
-  /* padding: 0.5rem; */
+  padding: 0.5rem;
   border: none;
   background-color: hsl(189, 41%, 97%);
   color: hsl(183, 100%, 15%);
@@ -257,23 +250,28 @@ input:focus {
 /* for the tips button */
 .select-tips {
   display: grid;
-  grid-template-columns: 30% 30% 30%;
+  grid-template-columns: 32% 32% 32%;
   gap: 1rem;
 }
 .tip-button {
   width: 100%;
-  height: 3rem;
   border-radius: 0.3rem;
   background-color: hsl(183, 100%, 15%);
   color: #fff;
   font-weight: 700;
   font-size: 1.25rem;
+  padding: 1rem;
+}
+.tip-button:hover {
+  background-color: hsl(185, 41%, 84%);
+}
+.tip-button-active {
+  background-color: hsl(172, 67%, 45%);
 }
 button {
   font-family: "Space Mono", monospace;
 }
 .custom-tips-input {
-  height: 3rem;
   border: none;
   background-color: hsl(189, 41%, 97%);
   color: hsl(183, 100%, 15%);
@@ -308,7 +306,7 @@ button {
 }
 .reset-btn {
   width: 90%;
-  height: 3rem;
+  padding: 1rem;
   font-size: 1.25vmax;
   font-weight: 700;
   background-color: hsl(172, 67%, 45%);
@@ -319,7 +317,7 @@ button {
   /* height: 100%; */
   justify-content: center;
   position: absolute;
-  top: 85%;
+  top: 80%;
 }
 .number-of-people-andno-zero-component {
   display: flex;
