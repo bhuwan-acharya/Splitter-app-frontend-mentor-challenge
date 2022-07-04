@@ -345,6 +345,7 @@ button {
 .number-of-people-andno-zero-component {
   display: flex;
   justify-content: space-between;
+  flex-wrap: wrap;
   align-items: baseline;
 }
 @media screen and (max-width: 575px) {
