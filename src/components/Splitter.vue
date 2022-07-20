@@ -154,6 +154,7 @@ export default {
       this.bill = null;
       this.numberOfPeople = null;
       this.tipSelected = null;
+      this.customTip = null;
     },
     selectTipHandle: function (e) {
       this.tipSelected = e.target.value;
