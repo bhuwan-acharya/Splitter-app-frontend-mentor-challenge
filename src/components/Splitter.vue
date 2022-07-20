@@ -158,6 +158,7 @@ export default {
     },
     selectTipHandle: function (e) {
       this.tipSelected = e.target.value;
+      this.customTip = null;
     },
     handleCustomTip: function (e) {
       this.customTip = e.target.value;
